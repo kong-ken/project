@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th" >
+<head>
+  <meta charset="UTF-8">
+  <title>The Force of fandom shops</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="icon" href="photo/IMG_20241123_114141.jpg" type="image/png">
+
+</head>
+<body>
+<!-- Hezh.html -->
+<div class="card">
+  <div class="circle" style="--clr: #f40103">
+    <img src="photo/logoweb.png" class="logo">
+  </div>
+  <div class="content">
+    <h2>The Force of fandom shop</h2>
+    <b>
+      <p class="typing-text">
+        ร้านของเรามีฟิกเกอร์ Star Wars<br>
+        ที่คัดสรรมาอย่างดี<br>
+        สำหรับแฟนพันธุ์แท้ของ Star Wars<br>
+        พบกับตัวละครและของสะสมมากมาย<br>
+        ที่พร้มจะฉีกกระเป๋าตังค์คุณแล้ว!<br>
+        มาเป็นส่วนหนึงกับเรา<br>
+        The Force of fandom Shop
+      </p>
+    </b>
+    
+    <a href="shop.html">เข้าสู่ร้าน</a>
+  </div>
+  <img src="photo/spacecraft.png" class="product_img">
+  <img src="photo/24S3.gif" class="bb8">
+</div> 
+<audio id="sound-effect" src="sounds/Millennium falcon hyperdrive effect_[cut_4sec].mp3" preload="auto"></audio>
+
+<script>
+    // ตัวแปรที่อ้างอิงไปยังไฟล์เสียงใน HTML
+    const audio = document.getElementById('sound-effect');
+
+    audio.volume = 1;
+    
+    // เมื่อมีการ hover บน .card
+    document.querySelector('.card').addEventListener('mouseenter', function() {
+        // เล่นเสียงเมื่อ hover
+        audio.play();
+    });
+
+    // เมื่อออกจาก hover
+    document.querySelector('.card').addEventListener('mouseleave', function() {
+        // หยุดเสียงเมื่อออกจาก hover
+        audio.pause();
+        audio.currentTime = 0;  // รีเซ็ตเวลาเสียง   
+    });
+</script>
+</body>
+</html> 

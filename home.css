@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?famiyl=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #151515;
+}
+.card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.card:hover {
+  width: 600px;
+  transition-delay: 0.5s;
+}
+.card .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .circle::before {
+  content: "";
+  position: absolute;
+  top: 30;
+  left: 2;
+  right: 2;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #191919;
+  border: 8px solid var(--clr);
+  filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+  transition: 0.5s, background 0.5s;
+  transition-delay: 0.75s, 1s;
+}
+.card:hover .circle::before {
+  transition-delay: 0.5s;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--clr);
+}
+.card .circle .logo {
+  position: relative;
+  width: 500px;
+  transition: 0.5s;
+  transition-delay: 1.0s;
+}
+.card:hover .circle .logo {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+.card .product_img {
+    position: absolute;
+    top: -90%; /* เริ่มจากด้านบน */
+    right: -90%; /* เริ่มจากด้านขวา */
+    transform: translate(30%, 30%) scale(0); /* ซ่อนรูปภาพ */
+    height: 200px;
+    opacity: 0; /* ซ่อนรูปภาพในตอนเริ่ม */
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .card:hover .product_img {
+    top: -30%; /* เคลื่อนมาที่กลางการ์ด */
+    right: 10%; /* เคลื่อนมาที่กลางการ์ด */
+    transform: translate(40%, 40%) scale(1); /* ขยายกลับเป็นขนาดปกติ */
+    opacity: 1; /* แสดงรูปภาพ */
+    
+}
+.card .content {
+  position: absolute;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 20px;
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+}
+.card:hover .content {
+  transition-delay: 0.75s;
+  opacity: 1;
+  visibility: visible;
+  left: 20px;
+}
+.card .content h2 {
+  position: relative;
+  top: -15px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.card .content p {
+  color: #fff;
+  position: relative;
+  top: 0px;
+}
+.card .content a {
+  position: relative;
+  top: 15px;
+  left: 20px;
+  color: #111;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.typing-text {
+  color: #fff;
+  font-size: .9em; /* ปรับขนาดข้อความ */
+  position: relative;
+  top: -5px !important; /* เลื่อนข้อความลง 20px จากตำแหน่งปกติ */
+}
+
+.card .bb8 {
+  position: absolute;
+  top: 68%; /* เริ่มจากด้านบน */
+  right: 13%; /* เริ่มจากด้านขวา */
+  transform: rotate(180deg) scale(0); /* หมุน 180 องศาและขนาด 0 */
+  height: 120px;
+  opacity: 0; /* ซ่อนรูปภาพในตอนเริ่ม */
+  transition: all 0.6s ease-in;
+}
+
+.card:hover .bb8 {
+  top: 68%; /* กำหนดให้มาอยู่กลางการ์ด */
+  right: 13%; /* กำหนดให้มาอยู่กลางการ์ด */
+  transform: rotate(0deg) scale(1); /* หมุนกลับ 0 องศาและขยายเป็นขนาดปกติ */
+  opacity: 1; /* แสดงรูปภาพ */
+  transform-origin: center center; /* กำหนดจุดหมุนให้เป็นตรงกลาง */
+}
+
+
+                                         
+                                       
