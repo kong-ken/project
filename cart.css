@@ -1,0 +1,123 @@
+/* ใช้พื้นหลังที่สบายตาและจัดการรูปแบบโดยรวม */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('photo/Star-Wars-Jedi-Fallen-Order-4K-Wallpaper-.jpg'); /* ตั้งค่าพื้นหลังอวกาศ */
+    background-size: cover; /* ให้พื้นหลังครอบคลุมทั้งจอ */
+    background-position: center; /* ให้พื้นหลังอยู่กลางจอ */
+    background-attachment: fixed; /* ให้พื้นหลังไม่เลื่อนตามการเลื่อนหน้า */
+    margin: 0;
+    padding: 0;
+}
+
+/* สไตล์คอนเทนเนอร์ของตะกร้า */
+#cart-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.325);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* หัวเรื่อง */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* สไตล์ของรายการสินค้า */
+#cart-summary {
+    margin-bottom: 30px;
+}
+
+/* สไตล์ของรายการสินค้าทุกชิ้น */
+.cart-item-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-summary .item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-summary .item-details {
+    flex-grow: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.cart-item-summary .item-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cart-item-summary .item-price {
+    color: #888;
+    font-size: 16px;
+}
+
+.cart-item-summary .item-quantity {
+    margin-top: 5px;
+}
+
+.cart-item-summary .update-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.cart-item-summary .update-btn:hover {
+    background-color: #0056b3;
+}
+
+.cart-item-summary .remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item-summary .remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* สไตล์ของการแสดงผลราคารวม */
+#cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ปุ่ม checkout */
+#checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6841df9c;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}

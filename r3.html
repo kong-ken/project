@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="r.css">
+    <title>Andev Web</title>
+</head>
+<body>
+    <a href="rebelalliance.html">
+        <h1 class="title-shop">spaceship</h1>
+    </a>
+    
+    <main class="main bd-grid">
+        <!-- แถวแรก: 4 การ์ด -->
+        <article class="card">
+            <div class="card__img">
+                <img src="photo/j/de.jpeg" alt="">
+            </div>
+            <div class="card__name">
+                <p> Jedi Starfighter</p>
+            </div>
+            <div class="card__precis">
+                <a href="#" class="card__icon" onclick="toggleHeart(this)">
+                    <ion-icon name="heart-outline"></ion-icon> <!-- เริ่มต้นด้วยเส้น -->
+                </a>                 
+                <div>
+                    <span class="card__preci card__preci--now">$349.00</span>
+                </div>
+                <a href="#" class="card__icon" onclick="addToCart(' Jedi Starfighter', 'photo/j/de.jpeg', '$349.00')">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>                
+                
+        </article>
+        <article class="card">
+            <div class="card__img">
+                <img src="photo/j/OIP.jpeg" alt="">
+            </div>
+            <div class="card__name">
+                <p>Delta-7 Aethersprite</p>
+            </div>
+            <div class="card__precis">
+                <a href="#" class="card__icon" onclick="toggleHeart(this)">
+                    <ion-icon name="heart-outline"></ion-icon> <!-- เริ่มต้นด้วยเส้น -->
+                </a>
+                <div>
+                    <span class="card__preci card__preci--now">$249.00</span>
+                </div>
+                <a href="#" class="card__icon" onclick="addToCart('Delta-7 Aethersprite', 'photo/j/OIP.jpeg', '$249.00')">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card__img">
+                <img src="photo/j/OIP (1).jpeg" alt="">
+            </div>
+            <div class="card__name">
+                <p>Actis Eta-2</p>
+            </div>
+            <div class="card__precis">
+                <a href="#" class="card__icon" onclick="toggleHeart(this)">
+                    <ion-icon name="heart-outline"></ion-icon> <!-- เริ่มต้นด้วยเส้น -->
+                </a>
+                <div>
+                    <span class="card__preci card__preci--now">$549.00</span>
+                </div>
+                <a href="#" class="card__icon" onclick="addToCart('Actis Eta-2', 'photo/j/OIP (1).jpeg', '$549.00')">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card__img">
+                <img src="photo/j/OIP (2).jpeg" alt="">
+            </div>
+            <div class="card__name">
+                <p>T-65 X-Wing</p>
+            </div>
+            <div class="card__precis">
+                <a href="#" class="card__icon" onclick="toggleHeart(this)">
+                    <ion-icon name="heart-outline"></ion-icon> <!-- เริ่มต้นด้วยเส้น -->
+                </a>
+                <div>
+                    <span class="card__preci card__preci--now">$149.00</span>
+                </div>
+                <a href="#" class="card__icon" onclick="addToCart('T-65 X-Wing', 'photo/j/OIP (2).jpeg', '$149.00')">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>
+
+                
+            </div>
+            
+        </article>
+
+    <!-- ปุ่มไปที่หน้าตะกร้า -->
+<a href="cart-summary.html" class="go-to-cart-btn">
+    <button class="go-to-cart">ตรวจสอบคลังสมบัติ</button>
+</a>
+
+    <script>
+        function toggleHeart(icon) {
+            const iconElement = icon.querySelector('ion-icon');
+            // เปลี่ยนชื่อไอคอนเป็น 'heart' ถ้ากดแล้วเป็นหัวใจเต็มดวง
+            if (iconElement.name === "heart-outline") {
+                iconElement.name = "heart"; // เปลี่ยนเป็นหัวใจเต็มดวง
+                iconElement.style.color = "red"; // เปลี่ยนสีเป็นแดง
+            } else {
+                iconElement.name = "heart-outline"; // เปลี่ยนกลับเป็นเส้น
+                iconElement.style.color = ""; // กลับสีเป็นปกติ
+            }
+        }
+    </script>
+
+<script>
+    function toggleHeart(icon) {
+        const iconElement = icon.querySelector('ion-icon');
+        // เปลี่ยนชื่อไอคอนเป็น 'heart' ถ้ากดแล้วเป็นหัวใจเต็มดวง
+        if (iconElement.name === "heart-outline") {
+            iconElement.name = "heart"; // เปลี่ยนเป็นหัวใจเต็มดวง
+            iconElement.style.color = "red"; // เปลี่ยนสีเป็นแดง
+        } else {
+            iconElement.name = "heart-outline"; // เปลี่ยนกลับเป็นเส้น
+            iconElement.style.color = ""; // กลับสีเป็นปกติ
+        }
+    }
+</script>
+
+<script>
+    function addToCart(name, imgSrc, price) {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // เช็คว่าในตะกร้ามีสินค้าชิ้นนี้หรือไม่
+        const existingItemIndex = cartItems.findIndex(item => item.name === name);
+        
+        if (existingItemIndex > -1) {
+            // ถ้ามีสินค้าในตะกร้าแล้ว เพิ่มจำนวน
+            cartItems[existingItemIndex].quantity += 1;
+        } else {
+            // ถ้ายังไม่มีสินค้าในตะกร้า เพิ่มสินค้าใหม่
+            cartItems.push({ name, imgSrc, price, quantity: 1 });
+        }
+
+        // บันทึกข้อมูลใน localStorage
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        // เปลี่ยนไอคอนของ cart เป็นสีดำเต็มรูปเมื่อคลิก
+        const cartIcon = event.target.closest('.card__icon').querySelector('ion-icon');
+        cartIcon.name = 'cart'; // เปลี่ยนเป็นไอคอนตะกร้าที่เต็มรูป
+        cartIcon.style.color = 'black'; // เปลี่ยนเป็นสีดำ
+
+        // อัพเดตจำนวนสินค้าที่ถูกเพิ่มไปในตะกร้า
+        updateCartCounter();
+    }
+
+    // อัพเดตจำนวนสินค้าในตะกร้า
+    function updateCartCounter() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCounter = document.getElementById('cart-counter');
+        const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+        cartCounter.textContent = totalItems;
+
+        // ซ่อนหากไม่มีสินค้าในตะกร้า
+        cartCounter.style.display = totalItems > 0 ? 'block' : 'none';
+    }
+
+    // เรียกใช้เพื่ออัพเดตจำนวนสินค้าเมื่อโหลดหน้า
+    window.onload = updateCartCounter;
+</script>
+
+
+
+<script>
+    // ฟังก์ชันดึงข้อมูลจาก localStorage และแสดงสินค้าที่เพิ่มไปในตะกร้า
+    function loadCart() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cartItems.length === 0) {
+            document.getElementById('cart-items').innerHTML = "<p>Your cart is empty.</p>";
+        } else {
+            let cartContent = "<ul>";
+            cartItems.forEach(item => {
+                cartContent += `
+                    <li>
+                        <img src="${item.imgSrc}" alt="${item.name}" width="50">
+                        <p>${item.name} - ${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                    </li>
+                `;
+            });
+            cartContent += "</ul>";
+            document.getElementById('cart-items').innerHTML = cartContent;
+        }
+    }
+
+    // เรียกใช้ฟังก์ชันเมื่อหน้าเว็บโหลด
+    window.onload = loadCart;
+</script>
+    <!-- ICONS -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+</html>

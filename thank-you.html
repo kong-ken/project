@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        /* ฟอนต์ Star Wars */
+        body {
+            font-family: 'Russo One', sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            background-image: url('photo/star_wars_4k_5k_hd_star_wars-3840x2160.jpg'); /* เพิ่มภาพพื้นหลังอวกาศ */
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #FFCC00;
+            text-shadow: 0 0 30px rgba(255, 204, 0, 0.7), 0 0 60px rgba(255, 204, 0, 0.7);
+            margin-top: 100px;
+            animation: glow 1.5s infinite alternate;
+            transform: translateY(-50px);
+        }
+
+        p {
+            font-size: 20px;
+            color: #ddd;
+            margin: 20px 0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .thank-you-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+            width: 80%;
+            margin: 50px auto;
+            transform: translateY(-100px);
+            animation: slideIn 1.5s ease-out forwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .message {
+            font-size: 24px;
+            color: #FFCC00;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+            margin-top: 20px;
+            animation: pulse 1.2s infinite alternate;
+        }
+
+        .redirect-message {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #aaa;
+            animation: fadeIn 1s ease-in forwards;
+            animation-delay: 2.5s;
+        }
+
+        /* การแอนิเมชั่นที่ทำให้ข้อความ 'Thank You' มีแสงระยิบระยับ */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 30px rgba(255, 204, 0, 0.7), 0 0 60px rgba(255, 204, 0, 0.7);
+            }
+            100% {
+                text-shadow: 0 0 50px rgba(255, 204, 0, 1), 0 0 100px rgba(255, 204, 0, 1);
+            }
+        }
+
+        /* การเลื่อนขึ้นของข้อความ */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* การเปลี่ยนแสงของข้อความเมื่อมีการแสดง */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* เอฟเฟ็กต์ข้อความสั่นเบาๆ */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <h1>Thank You for Your Purchase!</h1>
+        <p>Your order has been successfully placed. We appreciate your business!</p>
+        <div class="message">
+            <p>You will be redirected to the shop in a few seconds...</p>
+        </div>
+        <div class="redirect-message">
+            <p>Get ready for more Star Wars adventures!</p>
+        </div>
+    </div>
+
+    <script>
+        // ตั้งเวลาให้เปลี่ยนหน้าอัตโนมัติหลังจาก 5 วินาที
+        setTimeout(function() {
+            window.location.href = 'shop.html'; // ใส่ URL ของเพจถัดไป
+        }, 3000); // 5000ms = 5 วินาที
+    </script>
+
+</body>
+</html>
